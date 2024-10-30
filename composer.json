@@ -1,6 +1,13 @@
 {
-    "name": "baraa/ecommercewp2",
-    "description": "A simple PHP project",
-    "require": {}
+  "name": "baraa/ecommercewp2",
+  "description": "A simple PHP project for an e-commerce website",
+  "require": {},
+  "autoload": {
+      "psr-4": {
+          "App\\": "src/"
+      }
+  },
+  "scripts": {
+      "start": "php -S 0.0.0.0:8000 -t public"
   }
-  
+}
