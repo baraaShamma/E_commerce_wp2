@@ -1,7 +1,10 @@
 <?php
 include 'db.php';
 include 'navbar.php';
+if ($is_logged_in){
+  $user_id = $_SESSION['user_id'];
 
+}
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_id'], $_POST['quantity'])) {
   $product_id = $_POST['product_id'];
   $quantity = $_POST['quantity'];

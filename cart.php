@@ -1,7 +1,10 @@
 <?php
 include 'db.php';
 include 'navbar.php';
+if ($is_logged_in){
+  $user_id = $_SESSION['user_id'];
 
+}
 
 $sql = "SELECT * FROM cart JOIN products ON cart.product_id = products.id WHERE cart.user_id = $user_id";
 $result = $conn->query($sql);

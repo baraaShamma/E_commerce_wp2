@@ -2,8 +2,10 @@
 include 'db.php';
 include 'navbar.php'; 
 
-$user_id = $_SESSION['user_id'];
-
+if ($is_logged_in){
+    $user_id = $_SESSION['user_id'];
+  
+  }
 $sql = "SELECT * FROM orders WHERE user_id = $user_id ORDER BY order_date DESC";
 $orders = $conn->query($sql);
 ?>

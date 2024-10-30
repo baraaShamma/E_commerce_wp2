@@ -2,7 +2,11 @@
 include 'db.php';
 
 include 'navbar.php'; 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_id'], $_POST['quantity'])) {
+
+if ($is_logged_in){
+  $user_id = $_SESSION['user_id'];
+
+}if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_id'], $_POST['quantity'])) {
   $product_id = $_POST['product_id'];
   $quantity = $_POST['quantity'];
   $sql = "SELECT * FROM cart WHERE user_id = $user_id AND product_id = $product_id";
