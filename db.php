@@ -1,9 +1,9 @@
 <?php
-$servername = getenv('MYSQLHOST') ?: 'localhost';
-$username = getenv('MYSQLUSER') ?: 'root';
-$password = getenv('MYSQLPASSWORD') ?: '';
-$dbname = getenv('MYSQLDATABASE') ?: 'onlineStore';
-$port = getenv('MYSQLPORT') ?: 3306;
+$servername = getenv('MYSQLHOST') ;
+$username = getenv('MYSQLUSER');
+$password = getenv('MYSQLPASSWORD');
+$dbname = getenv('MYSQLDATABASE');
+$port = getenv('MYSQLPORT');
 
 // إنشاء الاتصال
 $conn = new mysqli($servername, $username, $password, $dbname, $port);
