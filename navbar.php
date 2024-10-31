@@ -1,8 +1,6 @@
 <?php
 include 'auth.php';
 
-$is_logged_in = isset($_SESSION['user_id']);
-
 ?>
   <!-- navbar -->
   <nav class="navbar navbar-expand-lg" id="navbar">
