@@ -1,6 +1,5 @@
 <?php
 include 'auth.php';
-
 ?>
   <nav class="navbar navbar-expand-lg" id="navbar">
     <div class="container-fluid">

@@ -48,4 +48,3 @@
   <hr>
 
 </footer>
-<!-- footer -->

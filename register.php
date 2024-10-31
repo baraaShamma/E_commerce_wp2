@@ -1,6 +1,5 @@
 <?php
 include 'db.php';
-include 'navbar.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = htmlspecialchars($_POST['name']);
@@ -32,6 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $checkEmailStmt->close();
 }
+include 'navbar.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
