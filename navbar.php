@@ -2,7 +2,6 @@
 include 'auth.php';
 
 ?>
-  <!-- navbar -->
   <nav class="navbar navbar-expand-lg" id="navbar">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.php" id="logo"><span id="span1">E</span>Lectronic <span>Shop</span></a>
@@ -46,4 +45,3 @@ include 'auth.php';
       </div>
     </div>
   </nav>
-  <!-- navbar -->
