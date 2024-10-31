@@ -1,10 +1,10 @@
 <?php
+include 'auth.php';
 include 'db.php';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    // تحضير الاستعلام لتجنب SQL Injection
     $stmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
@@ -17,17 +17,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             header("Location: index.php");
             exit();
         } else {
-                    $error_message = "كلمة مرور غير صحيحة";
-
+            $error_message = "كلمة مرور غير صحيحة";
         }
     } else {
         $error_message = "البريد الإلكتروني غير موجود";
-
-        
     }
     $stmt->close();
 }
-include 'navbar.php';
+include 'navbar.php'; 
 ?>
 
 <!DOCTYPE html>

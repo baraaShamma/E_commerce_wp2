@@ -1,12 +1,11 @@
 <?php
+include 'auth.php';
 include 'db.php';
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = htmlspecialchars($_POST['name']);
     $email = htmlspecialchars($_POST['email']);
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-    // التحقق من وجود البريد الإلكتروني مسبقًا
     $checkEmailStmt = $conn->prepare("SELECT email FROM users WHERE email = ?");
     $checkEmailStmt->bind_param("s", $email);
     $checkEmailStmt->execute();
@@ -15,7 +14,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($checkEmailStmt->num_rows > 0) {
         $error_message = "هذا البريد الإلكتروني مسجل مسبقًا!";
     } else {
-        // إدخال البيانات إذا لم يكن البريد موجود مسبقًا
         $stmt = $conn->prepare("INSERT INTO users (name, email, password) VALUES (?, ?, ?)");
         $stmt->bind_param("sss", $name, $email, $password);
 

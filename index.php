@@ -1,8 +1,6 @@
 <?php
 include 'db.php';
-
 include 'navbar.php'; 
-
 if ($is_logged_in){
   $user_id = $_SESSION['user_id'];
 
